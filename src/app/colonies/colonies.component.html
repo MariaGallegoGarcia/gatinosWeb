@@ -1,0 +1,21 @@
+<h2>Colonias</h2>
+
+<div>
+  <label for="new-colony">Nombre: </label>
+  <input id="new-colony" #colonyName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(colonyName.value); colonyName.value=''">
+    Añadir colonia
+  </button>
+</div>
+
+<ul class="colonies">
+  <li *ngFor="let colony of colonies">
+    <a routerLink="/detail/{{colony.id}}">
+      <span class="badge">{{colony.id}}</span> {{colony.name}}
+    </a>
+    <button type="button" class="delete" title="delete colony"
+      (click)="delete(colony)">x</button>
+  </li>
+</ul>

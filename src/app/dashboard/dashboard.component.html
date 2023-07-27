@@ -1,0 +1,9 @@
+<h2>Top Gatos</h2>
+<div class="cat-menu">
+  <a *ngFor="let cat of cats"
+      routerLink="/detail/{{cat.id}}">
+      {{cat.name}}
+  </a>
+</div>
+
+<app-cat-search></app-cat-search>
